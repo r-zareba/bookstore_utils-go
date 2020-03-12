@@ -1,4 +1,4 @@
-package errors
+package rest_errors
 
 import (
 	"errors"
@@ -9,7 +9,6 @@ import (
 
 func TestBadRequestError(t *testing.T) {
 	err := InternalServerError("Some Error message", errors.New("some error"))
-
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusInternalServerError, err.Status)
 	assert.EqualValues(t, "Internal Server Error", err.Error)
